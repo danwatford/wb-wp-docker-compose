@@ -1,0 +1,94 @@
+$menu-text-colour: #dddddd;
+$menu-text-shadow-colour: #000000;
+$submenu-background-colour: #000000C0;
+
+/*
+Make the .site-header background colour transparent so our hero sections from pages can show through.
+ */
+#masthead.site-header {
+  background-color: #00000000;
+}
+
+body:not(.woocommerce-page) {
+  .primary-navigation {
+    ul.menu {
+      background-color: unset;
+
+      ul.sub-menu {
+        background-color: $submenu-background-colour;
+      }
+
+      li:not(.woocommerce-mini-cart-item), li.current-menu-item {
+        &:hover {
+          background-color: $submenu-background-colour;
+        }
+
+        a {
+          color: $menu-text-colour;
+          text-shadow: 0 0 10px $menu-text-shadow-colour;
+        }
+      }
+    }
+  }
+
+  .handheld-navigation {
+    background-color: $submenu-background-colour;
+
+    ul {
+      ul.sub-menu {
+        background-color: #00000000;
+      }
+    }
+
+    li, li.current-menu-item {
+      a {
+        color: $menu-text-colour;
+      }
+    }
+
+    button.dropdown-toggle {
+      color: $menu-text-colour;
+    }
+  }
+
+  ul.site-header-cart {
+    &:hover {
+      background-color: $submenu-background-colour;
+    }
+
+    li:not(.woocommerce-mini-cart-item) {
+      > a {
+        color: $menu-text-colour;
+        text-shadow: 0 0 10px $menu-text-shadow-colour;
+      }
+    }
+  }
+}
+
+body.woocommerce-page {
+  .primary-navigation {
+    ul.menu {
+      background-color: unset;
+
+      ul.sub-menu {
+        background-color: $submenu-background-colour;
+      }
+
+      li, li.current-menu-item {
+        &:hover {
+          background-color: $submenu-background-colour;
+
+          a {
+            color: $menu-text-colour;
+          }
+        }
+      }
+    }
+  }
+
+  ul.site-header-cart {
+    &:hover {
+      background-color: $submenu-background-colour;
+    }
+  }
+}

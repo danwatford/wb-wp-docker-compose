@@ -1,0 +1,22 @@
+/*
+ Theme Name:   Wantsum Brewery
+ Theme URI:    http://example.com/wantsum-brewery-theme/
+ Description:  Wantsum Brewery Theme
+ Author:       Daniel Watford
+ Author URI:   https://watfordconsulting.com
+ Template:     storefront
+ Version:      0.0.9
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  wantsum-brewery-theme
+*/
+
+@import "partials/colours";
+@import "partials/layout";
+
+/* Apply an underline to the currently selected menu item and its parent.*/
+li.menu-item.current-menu-item > a,
+li.current-menu-parent > a {
+  text-decoration: underline
+}

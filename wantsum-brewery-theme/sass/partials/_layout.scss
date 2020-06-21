@@ -1,0 +1,142 @@
+
+body:not(.woocommerce-page) {
+  .site-header {
+    // Position the site header absolutely, allowing it to overlap with the site content and causing the menu to sit over cover images.
+    position: absolute;
+    width: 100%;
+    border: unset;
+    padding: 0;
+
+    // Hide site brancing and search in the header.
+    .site-branding, .site-search {
+      display: none;
+    }
+  }
+}
+
+/*
+Smaller screens introduce a margin around .col-full which prevents our hero section images from filling the screen.
+Larger screens introduce padding within .col-full which affects the hero sections images in the same way.
+
+Our hero sections must have the class wantsumbrewery-hero-section.
+
+Depending on the screen size, alter the absolute positioning of the hero section background images to fill .col-full's
+margin.
+
+.col-full margins are set at the Storefront theme's breakpoints which are generated using modular scale.
+Rather than build that in, the various breakpoints have been observed in chrome and captured here.
+If storefront changes their scales, the following media queries will likely need updating.
+ */
+@media (max-width: 568px) {
+  .wantsumbrewery-hero-section {
+    .wp-block-getwid-section__background-holder, .wp-block-getwid-section__divider {
+      left: -1.4157em;
+      right: -1.4157em;
+    }
+  }
+}
+
+@media (max-width: 66.4989378333em) {
+  .wantsumbrewery-hero-section {
+    .wp-block-getwid-section__background-holder, .wp-block-getwid-section__divider {
+      left: -2.617924em;
+      right: -2.617924em;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .wantsumbrewery-hero-section {
+    .wp-block-getwid-section__background-holder, .wp-block-getwid-section__divider {
+      left: -2.617924em;
+      right: -2.617924em;
+    }
+  }
+}
+
+/*
+Hide the title from regular pages. The title will be identified from the selected menu or the description in the hero
+section.
+ */
+article.page {
+  .entry-header {
+    display: none;
+  }
+}
+
+/*
+Remove the breadcrumb.
+ */
+.storefront-breadcrumb {
+  display: none;
+}
+
+.site-header-cart {
+  a.cart-contents {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+
+/*
+Push the menu button down from the top of the screen.
+ */
+.menu-toggle {
+  top: 1em;
+}
+
+.handheld-navigation {
+  ul {
+    padding-left: 1em;
+  }
+}
+
+.widget-media-gallery {
+  figure.gallery-item {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+}
+
+figure.gallery-item {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+body.delivery-note, body.receipt, body.invoice {
+  .order-branding {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1em;
+
+    .company-logo {
+      display: inline-block;
+
+      img {
+        width: 100px;
+        height: unset;
+      }
+    }
+
+    .company-info {
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .company-address {
+        font-weight: 500;
+        //text-align: justify;
+
+        p:first-line {
+          font-weight: 800;
+        }
+      }
+    }
+  }
+
+  .order-addresses {
+    margin-bottom: 2em;
+  }
+}

@@ -1,0 +1,9 @@
+.idea/
+
+wp-app/
+
+wp-data/*
+!wp-data/01-replace-urls.sh
+
+package/
+mu-plugins/*

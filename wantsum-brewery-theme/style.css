@@ -1,0 +1,165 @@
+/*
+ Theme Name:   Wantsum Brewery
+ Theme URI:    http://example.com/wantsum-brewery-theme/
+ Description:  Wantsum Brewery Theme
+ Author:       Daniel Watford
+ Author URI:   https://watfordconsulting.com
+ oldTemplate:     getwid-base
+ Template:     storefront
+ Version:      0.0.9
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  wantsum-brewery-theme
+*/
+/*
+Make the .site-header background colour transparent so our hero sections from pages can show through.
+ */
+#masthead.site-header {
+  background-color: #00000000; }
+
+body:not(.woocommerce-page) .primary-navigation ul.menu {
+  background-color: unset; }
+  body:not(.woocommerce-page) .primary-navigation ul.menu ul.sub-menu {
+    background-color: #000000C0; }
+  body:not(.woocommerce-page) .primary-navigation ul.menu li:not(.woocommerce-mini-cart-item):hover, body:not(.woocommerce-page) .primary-navigation ul.menu li.current-menu-item:hover {
+    background-color: #000000C0; }
+  body:not(.woocommerce-page) .primary-navigation ul.menu li:not(.woocommerce-mini-cart-item) a, body:not(.woocommerce-page) .primary-navigation ul.menu li.current-menu-item a {
+    color: #dddddd;
+    text-shadow: 0 0 10px #000000; }
+
+body:not(.woocommerce-page) .handheld-navigation {
+  background-color: #000000C0; }
+  body:not(.woocommerce-page) .handheld-navigation ul ul.sub-menu {
+    background-color: #00000000; }
+  body:not(.woocommerce-page) .handheld-navigation li a, body:not(.woocommerce-page) .handheld-navigation li.current-menu-item a {
+    color: #dddddd; }
+  body:not(.woocommerce-page) .handheld-navigation button.dropdown-toggle {
+    color: #dddddd; }
+
+body:not(.woocommerce-page) ul.site-header-cart:hover {
+  background-color: #000000C0; }
+
+body:not(.woocommerce-page) ul.site-header-cart li:not(.woocommerce-mini-cart-item) > a {
+  color: #dddddd;
+  text-shadow: 0 0 10px #000000; }
+
+body.woocommerce-page .primary-navigation ul.menu {
+  background-color: unset; }
+  body.woocommerce-page .primary-navigation ul.menu ul.sub-menu {
+    background-color: #000000C0; }
+  body.woocommerce-page .primary-navigation ul.menu li:hover, body.woocommerce-page .primary-navigation ul.menu li.current-menu-item:hover {
+    background-color: #000000C0; }
+    body.woocommerce-page .primary-navigation ul.menu li:hover a, body.woocommerce-page .primary-navigation ul.menu li.current-menu-item:hover a {
+      color: #dddddd; }
+
+body.woocommerce-page ul.site-header-cart:hover {
+  background-color: #000000C0; }
+
+body:not(.woocommerce-page) .site-header {
+  position: absolute;
+  width: 100%;
+  border: unset;
+  padding: 0; }
+  body:not(.woocommerce-page) .site-header .site-branding, body:not(.woocommerce-page) .site-header .site-search {
+    display: none; }
+
+/*
+Smaller screens introduce a margin around .col-full which prevents our hero section images from filling the screen.
+Larger screens introduce padding within .col-full which affects the hero sections images in the same way.
+
+Our hero sections must have the class wantsumbrewery-hero-section.
+
+Depending on the screen size, alter the absolute positioning of the hero section background images to fill .col-full's
+margin.
+
+.col-full margins are set at the Storefront theme's breakpoints which are generated using modular scale.
+Rather than build that in, the various breakpoints have been observed in chrome and captured here.
+If storefront changes their scales, the following media queries will likely need updating.
+ */
+@media (max-width: 568px) {
+  .wantsumbrewery-hero-section .wp-block-getwid-section__background-holder, .wantsumbrewery-hero-section .wp-block-getwid-section__divider {
+    left: -1.4157em;
+    right: -1.4157em; } }
+
+@media (max-width: 66.49894em) {
+  .wantsumbrewery-hero-section .wp-block-getwid-section__background-holder, .wantsumbrewery-hero-section .wp-block-getwid-section__divider {
+    left: -2.617924em;
+    right: -2.617924em; } }
+
+@media (min-width: 768px) {
+  .wantsumbrewery-hero-section .wp-block-getwid-section__background-holder, .wantsumbrewery-hero-section .wp-block-getwid-section__divider {
+    left: -2.617924em;
+    right: -2.617924em; } }
+
+/*
+Hide the title from regular pages. The title will be identified from the selected menu or the description in the hero
+section.
+ */
+article.page .entry-header {
+  display: none; }
+
+/*
+Remove the breadcrumb.
+ */
+.storefront-breadcrumb {
+  display: none; }
+
+.site-header-cart a.cart-contents {
+  padding-left: 1em;
+  padding-right: 1em; }
+
+/*
+Push the menu button down from the top of the screen.
+ */
+.menu-toggle {
+  top: 1em; }
+
+.handheld-navigation ul {
+  padding-left: 1em; }
+
+.widget-media-gallery figure.gallery-item {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+figure.gallery-item {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+
+body.delivery-note .order-branding, body.receipt .order-branding, body.invoice .order-branding {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1em; }
+  body.delivery-note .order-branding .company-logo, body.receipt .order-branding .company-logo, body.invoice .order-branding .company-logo {
+    display: inline-block; }
+    body.delivery-note .order-branding .company-logo img, body.receipt .order-branding .company-logo img, body.invoice .order-branding .company-logo img {
+      width: 100px;
+      height: unset; }
+  body.delivery-note .order-branding .company-info, body.receipt .order-branding .company-info, body.invoice .order-branding .company-info {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center; }
+    body.delivery-note .order-branding .company-info .company-address, body.receipt .order-branding .company-info .company-address, body.invoice .order-branding .company-info .company-address {
+      font-weight: 500; }
+      body.delivery-note .order-branding .company-info .company-address p:first-line, body.receipt .order-branding .company-info .company-address p:first-line, body.invoice .order-branding .company-info .company-address p:first-line {
+        font-weight: 800; }
+
+body.delivery-note .order-addresses, body.receipt .order-addresses, body.invoice .order-addresses {
+  margin-bottom: 2em; }
+
+/* Position the site header absolutely, allowing it to overlap with the site content and causing the menu to sit over cover images. */
+/* Apply an underline to the currently selected menu item and its parent.*/
+li.menu-item.current-menu-item > a,
+li.current-menu-parent > a {
+  text-decoration: underline; }
+
+/* Ensure sub menus take their color and background from ancestor elements, such as the site-header. This prevents submenus from having their background colour overridden to white. */
+/* Ensure beer images have a minimum width to ensure alignment for the Core Range page. */
+/* Quick hacks for product styling so we can see all text ahead of restyling the shop and products. */
+/*
+General colour usage
+ */
+
+/*# sourceMappingURL=style.css.map */
