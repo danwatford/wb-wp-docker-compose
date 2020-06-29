@@ -75,3 +75,6 @@ If the db container already exists, it is possible to import a database dump usi
 ** docker-compose up db
 * Once the db service is running, import the dump:
 ** TODO - need variant of command to specify target database - docker-compose exec db sh -c 'exec mysql -uroot -p"$MYSQL_ROOT_PASSWORD"' < wp-data/dump.sql
+
+# TODO - run chown www-data:www-data  -R * in image on at /var/www/html to ensure apache can write to wordpress install.
+docker-compose run --no-deps wp sh -c 'chown www-data:www-data -R /var/www/html'

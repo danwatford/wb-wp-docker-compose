@@ -8,11 +8,13 @@ services:
       - 0.0.0.0:443:443
     volumes:
       - ./config/php.conf.ini:/usr/local/etc/php/conf.d/conf.ini
+      - ./config/apache/certs:/etc/ssl/certs
+      - ./config/apache/private:/etc/ssl/private
       - ./wp-app:/var/www/html # Full wordpress project
       - ./wp-init.sh:/usr/local/bin/apache2-custom.sh
       - ./wantsum-brewery-plugin/:/var/www/html/wp-content/plugins/wantsum-brewery-plugin
       - ./wantsum-brewery-theme/:/var/www/html/wp-content/themes/wantsum-brewery
-      - ./mu-plugins/:/var/www/html/wp-content/wmu-plugins
+      - ./mu-plugins/:/var/www/html/wp-content/mu-plugins
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_NAME: "${DB_NAME}"
@@ -25,6 +27,8 @@ services:
     links:
       - db
     command: "bash -c apache2-custom.sh"
+
+# TODO - run chown www-data:www-data  -R * in image on at /var/www/html to ensure apache can write to wordpress install.
 
   wpcli:
     image: wordpress:cli
