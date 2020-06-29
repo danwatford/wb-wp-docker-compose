@@ -13,6 +13,7 @@ services:
       - ./wp-app:/var/www/html # Full wordpress project
       - ./wp-init.sh:/usr/local/bin/apache2-custom.sh
       - ./wantsum-brewery-plugin/:/var/www/html/wp-content/plugins/wantsum-brewery-plugin
+      - ./prevent-shipping-of-non-courier-products/:/var/www/html/wp-content/plugins/prevent-shipping-of-non-courier-products
       - ./wantsum-brewery-theme/:/var/www/html/wp-content/themes/wantsum-brewery
       - ./mu-plugins/:/var/www/html/wp-content/mu-plugins
     environment:
