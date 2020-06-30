@@ -16,7 +16,8 @@ echo "SCRIPT: $SCRIPT"
 echo "SCRIPTPATH: $SCRIPTPATH"
 
 for x in $SCRIPTPATH/*.sql; do
+	[ -e "$x" ] || continue
     echo "Processing SQL file: $x"
-	sed -i 's#https://wb.dev.watfordconsulting.com#https://localhost#g' $x
-	sed -i 's#https://wantsumbrewery.co.uk#https://localhost#g' $x
+	sed -i 's#https://wb.dev.watfordconsulting.com#https://localhost#g' "$x"
+	sed -i 's#https://wantsumbrewery.co.uk#https://localhost#g' "$x"
 done
